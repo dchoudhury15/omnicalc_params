@@ -1,0 +1,16 @@
+<h1>  Payment Results </h1>
+<div> <p> <b>Minimum </div></b>
+  <%= @the_first %></p>
+
+  <div> <p> <b>Maximum </div></b>
+    <%= @the_second %></p>
+
+    <div> <p> <b>Random Number </div></b>
+      <%= @the_random %> <a href="/random/results?usr_min=<%= params["usr_min"] %>&usr_max=<%= params['usr_max'] %>"> Recalculate </a> </p>
+
+</h3>
+<br>
+<br>
+<div>
+  <a href="/random/new"> Pick another random number </a>
+</div>

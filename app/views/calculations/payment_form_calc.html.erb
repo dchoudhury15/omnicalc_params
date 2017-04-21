@@ -1,0 +1,19 @@
+<h1>  Payment Results </h1>
+<div> <p> <b>APR </div></b>
+  <%= @the_interest %></p>
+
+  <div> <p> <b>Number of years </div></b>
+    <%= @the_period %></p>
+
+    <div> <p> <b>Principal </div></b>
+      <%= @the_principal %></p>
+
+      <div> <p> <b>payment </div></b>
+        <%= number_to_currency(@the_payment) %></p>
+
+</h3>
+<br>
+<br>
+<div>
+  <a href="/payment/new"> Enter New Number </a>
+</div>

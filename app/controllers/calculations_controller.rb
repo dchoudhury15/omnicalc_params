@@ -48,4 +48,39 @@ class CalculationsController < ApplicationController
       @the_square=@the_input**2
       render("calculations/square_form_calc.html.erb")
   end
+  def square_root_form
+      render("calculations/square_root_form.html.erb")
+  end
+
+  def square_root_form_calc
+      @the_input=params["usr_num"].to_f
+      @the_squareroot=@the_input**(0.5)
+      render("calculations/square_root_form_calc.html.erb")
+  end
+
+  def payment_form
+      render("calculations/payment_form.html.erb")
+  end
+
+  def payment_form_calc
+    @the_interest=params["usr_apr"].to_f
+    monthly=@the_interest/(100*12)
+    @the_period=params["usr_year"].to_f
+    monthly_period=@the_period*12
+    @the_principal=params["usr_prin"].to_f
+    @the_payment=(monthly*@the_principal)/(1-(1+monthly)**(-monthly_period))
+
+      render("calculations/payment_form_calc.html.erb")
+  end
+  def random_form
+      render("calculations/random_form.html.erb")
+  end
+  def random_results_form
+    @the_first=params["usr_min"].to_f
+
+    @the_second=params["usr_max"].to_f
+    randomnum=rand(@the_first...@the_second)
+    @the_random=randomnum
+      render("calculations/random_results_form.html.erb")
+  end
 end
